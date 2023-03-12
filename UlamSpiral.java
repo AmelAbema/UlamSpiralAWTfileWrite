@@ -10,6 +10,7 @@ public class UlamSpiral extends Frame {
     private final int MAX_SIZE = SIZE * 10;
     private final int[][] primes = new int[MAX_SIZE][MAX_SIZE];
     private final int[] primeCountsByLength = new int[10];
+
     public UlamSpiral() {
         super("Ulam Spiral");
         setSize(SIZE, SIZE);
@@ -20,11 +21,101 @@ public class UlamSpiral extends Frame {
                 System.exit(0);
             }
         });
-
-        generatePrimes();
-
-        savePrimesToFile();
+        startApp();
     }
+
+    public void startApp() {
+        File primesFile = new File("primes.dat");
+        try {
+            boolean value = primesFile.createNewFile();
+            System.out.println("File created successfully (Value: '" + value + "').");
+        } catch (IOException e) {
+            System.err.print("Cannot create file");
+            throw new RuntimeException(e);
+        }
+        generatePrimes();
+        System.out.println("Primes generated successfully.");
+        savePrimesToFile(primesFile);
+        System.out.println("Primes saved to file successfully.");
+    }
+
+    private void generatePrimes() {
+        int num = 1;
+        int dx = 1;
+        int dy = 0;
+        int x = MAX_SIZE / 2;
+        int y = MAX_SIZE / 2;
+        int stepCount = 0;
+        int steps = 1;
+        do {
+            if (isPrime(num)) {
+                primes[y][x] = num;
+                primeCountsByLength[String.valueOf(num).length() - 1]++;
+            }
+            num++;
+            x += dx;
+            y += dy;
+            stepCount++;
+            if (stepCount == steps) {
+                int temp = dx;
+                dx = -dy;
+                dy = temp;
+                stepCount = 0;
+                if (dy == 0) {
+                    steps++;
+                }
+            }
+        } while (num < MAX_SIZE * MAX_SIZE);
+    }
+
+    private void savePrimesToFile(File primesFile) {
+        try {
+            DataOutputStream out = new DataOutputStream(new FileOutputStream(primesFile));
+            for (int i = 0; i < 10; i++) {
+                int numPrimes = primeCountsByLength[i];
+                out.writeLong(numPrimes);
+                int numBytes = i + 1;
+                for (int j = 0; j < MAX_SIZE; j++) {
+                    for (int k = 0; k < MAX_SIZE; k++) {
+                        int prime = primes[j][k];
+                        if (prime != 0 && String.valueOf(prime).length() == numBytes) {
+                            out.write(prime);
+                        }
+                    }
+                }
+            }
+            out.close();
+            System.out.println("Primes saved to file successfully.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+//    private void loadPrimesFromFile(File primesFile) {
+//        try {
+//            DataInputStream in = new DataInputStream(new FileInputStream(primesFile));
+//            for (int i = 0; i < 10; i++) {
+//                int numPrimes = (int) in.readLong();
+//                primeCountsByLength[i] = numPrimes;
+//                int numBytes = i + 1;
+//                for (int j = 0; j < numPrimes; j++) {
+//                    int prime = 0;
+//                    for (int k = 0; k < numBytes; k++) {
+//                        int byteVal = in.read();
+//                        if (byteVal == -1) {
+//                            throw new EOFException("Unexpected end of file");
+//                        }
+//                        prime = (prime << 8) | byteVal;
+//                    }
+//                    primes[i][j] = prime;
+//                }
+//            }
+//            in.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
     private boolean isPrime(int num) {
         if (num <= 1) {
             return false;
@@ -36,59 +127,7 @@ public class UlamSpiral extends Frame {
         }
         return true;
     }
-    private void generatePrimes() {
-            int num = 1;
-            int dx = 1;
-            int dy = 0;
-            int x = MAX_SIZE / 2;
-            int y = MAX_SIZE / 2;
-            int stepCount = 0;
-            int steps = 1;
-            do {
-                if (isPrime(num)) {
-                    primes[y][x] = num;
-                    primeCountsByLength[String.valueOf(num).length() - 1]++;
-                }
-                num++;
-                x += dx;
-                y += dy;
-                stepCount++;
-                if (stepCount == steps) {
-                    int temp = dx;
-                    dx = -dy;
-                    dy = temp;
-                    stepCount = 0;
-                    if (dy == 0) {
-                        steps++;
-                    }
-                }
-            } while (num < MAX_SIZE * MAX_SIZE);
-    }
-    private void savePrimesToFile() {
-        File primesFile = new File("primes.bin");
-        try {
-            DataOutputStream out = new DataOutputStream(new FileOutputStream(primesFile));
-            for (int i = 0; i < 10; i++) {
-                int numPrimes = primeCountsByLength[i];
-                out.writeLong(numPrimes);
-                int numBytes = i + 1;
-                for (int j = 0; j < MAX_SIZE; j++) {
-                    for (int k = 0; k < MAX_SIZE; k++) {
-                        int prime = primes[j][k];
-                        if (prime != 0 && String.valueOf(prime).length() == numBytes) {
-                            out.write(prime >> 24);
-                            out.write(prime >> 16);
-                            out.write(prime >> 8);
-                            out.write(prime);
-                        }
-                    }
-                }
-            }
-            out.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+
     @Override
     public void paint(Graphics g) {
         for (int i = 0; i < MAX_SIZE; i++) {
