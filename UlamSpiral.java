@@ -1,4 +1,4 @@
-package JAVA.src.Project01;
+package JAVA;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -12,18 +12,18 @@ public class UlamSpiral extends Frame {
     private final int[] primeCountsByLength = new int[10];
     public UlamSpiral() {
         super("Ulam Spiral");
-        this.setSize(SIZE, SIZE);
-        this.setVisible(true);
-        this.addWindowListener(new WindowAdapter() {
+        setSize(SIZE, SIZE);
+        setVisible(true);
+        addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosing(WindowEvent e) {
-                dispose();
                 System.exit(0);
             }
         });
 
-        File primesFile = new File("primes.dat");
         generatePrimes();
-        savePrimesToFile(primesFile);
+
+        savePrimesToFile();
     }
     private boolean isPrime(int num) {
         if (num <= 1) {
@@ -64,7 +64,8 @@ public class UlamSpiral extends Frame {
                 }
             } while (num < MAX_SIZE * MAX_SIZE);
     }
-    private void savePrimesToFile(File primesFile) {
+    private void savePrimesToFile() {
+        File primesFile = new File("primes.bin");
         try {
             DataOutputStream out = new DataOutputStream(new FileOutputStream(primesFile));
             for (int i = 0; i < 10; i++) {
