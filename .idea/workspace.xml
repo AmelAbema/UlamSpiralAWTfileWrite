@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="378edb65-9b49-49ca-98b8-bfd57a03c1be" name="Changes" comment="v.6">
+      <change beforePath="$PROJECT_DIR$/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UlamSpiral.java" beforeDir="false" afterPath="$PROJECT_DIR$/UlamSpiral.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="63861730-6d85-4520-904f-6549734e268f" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="63861730-6d85-4520-904f-6549734e268f" />
+        <option name="url" value="https://github.com/AmelAbema/UlamSpiralAWTfileWrite" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2IebnREOsgx8r2AUiqr7iMurLj6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+    <option name="sortByType" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "19",
+    "last_opened_file_path": "C:/Programming/PRs/JAVA/primes.dat",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.customizations",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="JAVA" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="JAVA.Main" />
+      <module name="PRs" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="JAVA.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="378edb65-9b49-49ca-98b8-bfd57a03c1be" name="Changes" comment="" />
+      <created>1670545162391</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1670545162391</updated>
+      <workItem from="1670545163581" duration="419000" />
+      <workItem from="1670597530630" duration="6009000" />
+      <workItem from="1670686120218" duration="1880000" />
+      <workItem from="1670792586785" duration="608000" />
+      <workItem from="1670856690384" duration="6400000" />
+      <workItem from="1671035510007" duration="13699000" />
+      <workItem from="1671143101726" duration="6434000" />
+      <workItem from="1671252334127" duration="616000" />
+      <workItem from="1671401512844" duration="254000" />
+      <workItem from="1671804932810" duration="6552000" />
+      <workItem from="1672001083143" duration="4238000" />
+      <workItem from="1672313740392" duration="10373000" />
+      <workItem from="1672401967868" duration="744000" />
+      <workItem from="1672513701530" duration="1473000" />
+      <workItem from="1672918624359" duration="258000" />
+      <workItem from="1673018921935" duration="1925000" />
+      <workItem from="1673410201666" duration="1296000" />
+      <workItem from="1673412004299" duration="1508000" />
+      <workItem from="1673916231346" duration="1535000" />
+      <workItem from="1673972176218" duration="3000" />
+      <workItem from="1674351142809" duration="193000" />
+      <workItem from="1674775675916" duration="66000" />
+      <workItem from="1675611099253" duration="299000" />
+      <workItem from="1678228419839" duration="1042000" />
+      <workItem from="1678466232042" duration="13217000" />
+      <workItem from="1678543347882" duration="782000" />
+      <workItem from="1678560124530" duration="174000" />
+      <workItem from="1678560309576" duration="605000" />
+      <workItem from="1678632740793" duration="7485000" />
+      <workItem from="1678640303371" duration="500000" />
+      <workItem from="1678640824842" duration="500000" />
+      <workItem from="1678643411781" duration="53000" />
+      <workItem from="1678643474217" duration="110000" />
+      <workItem from="1678643594816" duration="390000" />
+      <workItem from="1678643996518" duration="5565000" />
+      <workItem from="1678650331002" duration="2359000" />
+      <workItem from="1678656080557" duration="1413000" />
+      <workItem from="1678657736273" duration="4193000" />
+    </task>
+    <task id="LOCAL-00001" summary="v.1">
+      <created>1678640377392</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678640377392</updated>
+    </task>
+    <task id="LOCAL-00002" summary="v.2">
+      <created>1678640437123</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1678640437123</updated>
+    </task>
+    <task id="LOCAL-00003" summary="v.2">
+      <created>1678640676057</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1678640676057</updated>
+    </task>
+    <task id="LOCAL-00004" summary="v.4">
+      <created>1678641273924</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1678641273924</updated>
+    </task>
+    <task id="LOCAL-00005" summary="v.5">
+      <created>1678655402166</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1678655402167</updated>
+    </task>
+    <task id="LOCAL-00006" summary="v.5">
+      <created>1678655506847</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678655506847</updated>
+    </task>
+    <task id="LOCAL-00007" summary="v.6">
+      <created>1678655623442</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1678655623442</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="v.1" />
+    <MESSAGE value="v.2" />
+    <MESSAGE value="v.4" />
+    <MESSAGE value="v.5" />
+    <MESSAGE value="v.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="v.6" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
