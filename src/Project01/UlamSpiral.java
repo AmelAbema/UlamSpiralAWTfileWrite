@@ -1,4 +1,4 @@
-package JAVA;
+package JAVA.src.Project01;
 
 import java.awt.*;
 import java.awt.event.*;
