@@ -6,13 +6,14 @@ import java.io.*;
 
 public class UlamSpiral extends Frame {
     public final int DOT_SIZE = 2;
-    public final int SIZE = 800;
+    public final int SIZE = 600;
     private final int MAX_SIZE = SIZE * 10;
-    private final int[][] primes = new int[MAX_SIZE][MAX_SIZE];
+    private final int[][] primes = new int[MAX_SIZE + 1][MAX_SIZE + 1];
     private final int[] primeCountsByLength = new int[10];
 
     public UlamSpiral() {
         super("Ulam Spiral");
+
         setSize(SIZE, SIZE);
         setVisible(true);
         addWindowListener(new WindowAdapter() {
@@ -26,17 +27,20 @@ public class UlamSpiral extends Frame {
 
     public void startApp() {
         File primesFile = new File("primes.dat");
-        try {
-            boolean value = primesFile.createNewFile();
-            System.out.println("File created successfully (Value: '" + value + "').");
-        } catch (IOException e) {
-            System.err.print("Cannot create file");
-            throw new RuntimeException(e);
-        }
-        generatePrimes();
-        System.out.println("Primes generated successfully.");
-        savePrimesToFile(primesFile);
-        System.out.println("Primes saved to file successfully.");
+//        if (!primesFile.exists()) {
+            try {
+                boolean value = primesFile.createNewFile();
+                System.out.println("File created successfully (Value: '" + value + "').");
+                generatePrimes();
+                savePrimesToFile(primesFile);
+            } catch (IOException e) {
+                System.err.print("Cannot create file");
+                throw new RuntimeException(e);
+            }
+//        } else {
+//            loadPrimesFromFile(primesFile);
+//        }
+
     }
 
     private void generatePrimes() {
@@ -66,25 +70,24 @@ public class UlamSpiral extends Frame {
                 }
             }
         } while (num < MAX_SIZE * MAX_SIZE);
+        System.out.println("Primes generated.");
     }
 
     private void savePrimesToFile(File primesFile) {
-        try {
-            DataOutputStream out = new DataOutputStream(new FileOutputStream(primesFile));
+        try (DataOutputStream out = new DataOutputStream(new FileOutputStream(primesFile))) {
             for (int i = 0; i < 10; i++) {
-                int numPrimes = primeCountsByLength[i];
-                out.writeLong(numPrimes);
+                out.writeLong(primeCountsByLength[i]);
                 int numBytes = i + 1;
-                for (int j = 0; j < MAX_SIZE; j++) {
-                    for (int k = 0; k < MAX_SIZE; k++) {
-                        int prime = primes[j][k];
-                        if (prime != 0 && String.valueOf(prime).length() == numBytes) {
-                            out.write(prime);
-                        }
+                for (int j = 0; j < primeCountsByLength[i]; j++) {
+                    if (j >= primes[i].length) {
+                        break;
+                    }
+                    int prime = primes[i][j];
+                    for (int k = numBytes - 1; k >= 0; k--) {
+                        out.write((prime >> (8 * k)) & 0xFF);
                     }
                 }
             }
-            out.close();
             System.out.println("Primes saved to file successfully.");
         } catch (IOException e) {
             e.printStackTrace();
@@ -92,12 +95,12 @@ public class UlamSpiral extends Frame {
     }
 
 //    private void loadPrimesFromFile(File primesFile) {
-//        try {
-//            DataInputStream in = new DataInputStream(new FileInputStream(primesFile));
+//        try (DataInputStream in = new DataInputStream(new FileInputStream(primesFile))) {
 //            for (int i = 0; i < 10; i++) {
-//                int numPrimes = (int) in.readLong();
-//                primeCountsByLength[i] = numPrimes;
+//                long numPrimes = in.readLong();
+//                primeCountsByLength[i] = (int) numPrimes;
 //                int numBytes = i + 1;
+//                primes[i] = new int[primeCountsByLength[i]];
 //                for (int j = 0; j < numPrimes; j++) {
 //                    int prime = 0;
 //                    for (int k = 0; k < numBytes; k++) {
@@ -110,7 +113,7 @@ public class UlamSpiral extends Frame {
 //                    primes[i][j] = prime;
 //                }
 //            }
-//            in.close();
+//            System.out.println("Primes loaded from file successfully.");
 //        } catch (IOException e) {
 //            e.printStackTrace();
 //        }
